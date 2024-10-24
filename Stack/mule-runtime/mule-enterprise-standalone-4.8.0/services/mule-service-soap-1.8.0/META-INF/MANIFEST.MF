@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Created-By: Maven JAR Plugin 3.4.2
+Build-Jdk-Spec: 17
+Specification-Title: Mule SOAP Service
+Specification-Version: 1.8
+Specification-Vendor: MuleSoft, Inc.
+Implementation-Title: Mule SOAP Service
+Implementation-Version: 1.8.0
+Implementation-Vendor: MuleSoft, Inc.
+Automatic-Module-Name: org.mule.service.soap
+Build-Date: 
+Build-Revision: 63368710
+Description: Mule Runtime and Integration Platform
+Dev-List-Email: mule-esb@mulesoft.com
+Git-branch: 1.8.0
+Git-commit-id: 6336871035cd22fc07148554e5f4e73a126e5f99
+Git-commit-id-describe: 1.8.0-rc3-2-g6336871
+Git-commit-time: 2024-09-24T22:57:01+0000
+Git-remote-origin-url: https://github.com/mulesoft/mule-soap-service.git
+Git-tags: 
+License: CPAL v1.0 http://www.mulesoft.com/CPAL/
+More-Info: For more information go to https://developer.mulesoft.com/
+Product-Url: https://developer.mulesoft.com/
+Recommended-Jdks: [1.8.0_181,9),[11,12),[17,18)
+Support: Get commercial support: http://www.mulesoft.com/support
+Supported-Jdks: [1.8.0,18)
+Vendor-Url: http://www.mulesoft.com
+

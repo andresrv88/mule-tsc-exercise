@@ -1,0 +1,525 @@
+{
+	"info": {
+		"_postman_id": "917968e8-a596-4b89-893e-3149d0b35080",
+		"name": "MuleSoft STC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3644495"
+	},
+	"item": [
+		{
+			"name": "SAPI MySQL",
+			"item": [
+				{
+					"name": "MySQL DB SELECT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{mysql.db.host.local}}/mysql/select",
+							"protocol": "http",
+							"host": [
+								"{{mysql.db.host.local}}"
+							],
+							"path": [
+								"mysql",
+								"select"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MySQL DB SELECT (CH)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mysql.db.host}}/mysql/select",
+							"host": [
+								"{{mysql.db.host}}"
+							],
+							"path": [
+								"mysql",
+								"select"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MySQL DB UPDATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 1,\r\n    \"quantity\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{mysql.db.host.local}}/mysql/update",
+							"protocol": "http",
+							"host": [
+								"{{mysql.db.host.local}}"
+							],
+							"path": [
+								"mysql",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MySQL DB BULK UPDATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"productId\": 1,\r\n        \"quantity\": 1\r\n    },\r\n    {\r\n        \"productId\": 2,\r\n        \"quantity\": 1\r\n    },\r\n    {\r\n        \"productId\": 3,\r\n        \"quantity\": 1\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{mysql.db.host.local}}/mysql/bulk-update",
+							"protocol": "http",
+							"host": [
+								"{{mysql.db.host.local}}"
+							],
+							"path": [
+								"mysql",
+								"bulk-update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MySQL DB BULK UPDATE (CH)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"productId\": 1,\r\n        \"quantity\": 1\r\n    },\r\n    {\r\n        \"productId\": 2,\r\n        \"quantity\": 1\r\n    },\r\n    {\r\n        \"productId\": 3,\r\n        \"quantity\": 1\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mysql.db.host}}/mysql/bulk-update",
+							"host": [
+								"{{mysql.db.host}}"
+							],
+							"path": [
+								"mysql",
+								"bulk-update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SAPI Redis",
+			"item": [
+				{
+					"name": "Redis GET Key",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"key\": \"products\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{redis.http.host.local}}/redis/get-key",
+							"protocol": "http",
+							"host": [
+								"{{redis.http.host.local}}"
+							],
+							"path": [
+								"redis",
+								"get-key"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Redis GET Key (CH)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"key\": \"products\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{redis.http.host}}/redis/get-key",
+							"host": [
+								"{{redis.http.host}}"
+							],
+							"path": [
+								"redis",
+								"get-key"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Redis SET Key",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"key\": \"test\",\r\n    \"value\": \"{\\\"k\\\":\\\"v\\\"}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{redis.http.host.local}}/redis/set-key",
+							"protocol": "http",
+							"host": [
+								"{{redis.http.host.local}}"
+							],
+							"path": [
+								"redis",
+								"set-key"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Redis SET Key (CH)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"key\": \"test\",\r\n    \"value\": \"{\\\"k\\\":\\\"v1\\\"}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{redis.http.host}}/redis/set-key",
+							"host": [
+								"{{redis.http.host}}"
+							],
+							"path": [
+								"redis",
+								"set-key"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PAPI DB Handler",
+			"item": [
+				{
+					"name": "Get Products List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{papi.http.host.local}}/process/list-all-products",
+							"protocol": "http",
+							"host": [
+								"{{papi.http.host.local}}"
+							],
+							"path": [
+								"process",
+								"list-all-products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products List (CH)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{papi.http.host}}/process/list-all-products",
+							"host": [
+								"{{papi.http.host}}"
+							],
+							"path": [
+								"process",
+								"list-all-products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Run Sync",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{papi.http.host.local}}/process/run-sync",
+							"protocol": "http",
+							"host": [
+								"{{papi.http.host.local}}"
+							],
+							"path": [
+								"process",
+								"run-sync"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Handle Purchase",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n            \"productId\": 1,\r\n            \"product_name\": \"T-Shirt Yoda\",\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"productId\": 2,\r\n            \"product_name\": \"Leather Jacket\",\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"productId\": 3,\r\n            \"product_name\": \"Blue Jeans\",\r\n            \"quantity\": 1\r\n        }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{papi.http.host.local}}/process/process-purchase",
+							"protocol": "http",
+							"host": [
+								"{{papi.http.host.local}}"
+							],
+							"path": [
+								"process",
+								"process-purchase"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Handle Purchase v2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n            \"productId\": 4,\r\n            \"product_name\": \"T-Shirt Yoda\",\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"productId\": 5,\r\n            \"product_name\": \"Leather Jacket\",\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"productId\": 6,\r\n            \"product_name\": \"Blue Jeans\",\r\n            \"quantity\": 1\r\n        }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{papi.http.host.local}}/process/process-purchase/v2",
+							"protocol": "http",
+							"host": [
+								"{{papi.http.host.local}}"
+							],
+							"path": [
+								"process",
+								"process-purchase",
+								"v2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EAPI Products",
+			"item": [
+				{
+					"name": "EAPI List Products",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "A8eD1a99fb844329bf5d98F41F6dF96F",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "45a4f1c9667540ec83becd7efec30d03",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{eapi.http.host.local}}/v1/list-all-products",
+							"protocol": "http",
+							"host": [
+								"{{eapi.http.host.local}}"
+							],
+							"path": [
+								"v1",
+								"list-all-products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EAPI List Products (CH)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "A8eD1a99fb844329bf5d98F41F6dF96F",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "45a4f1c9667540ec83becd7efec30d03",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{eapi.http.host}}/v1/list-all-products",
+							"host": [
+								"{{eapi.http.host}}"
+							],
+							"path": [
+								"v1",
+								"list-all-products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EAPI Buy Products",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "A8eD1a99fb844329bf5d98F41F6dF96F",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "45a4f1c9667540ec83becd7efec30d03",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"productId\": \"1\",\r\n        \"quantity\": 10\r\n    },\r\n    {\r\n        \"productId\": \"2\",\r\n        \"quantity\": 2\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{eapi.http.host.local}}/v1/buy-products",
+							"protocol": "http",
+							"host": [
+								"{{eapi.http.host.local}}"
+							],
+							"path": [
+								"v1",
+								"buy-products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EAPI Buy Products (CH)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "A8eD1a99fb844329bf5d98F41F6dF96F",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "45a4f1c9667540ec83becd7efec30d03",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"productId\": \"1\",\r\n        \"quantity\": 1\r\n    },\r\n    {\r\n        \"productId\": \"2\",\r\n        \"quantity\": 2\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{eapi.http.host}}/v1/buy-products",
+							"host": [
+								"{{eapi.http.host}}"
+							],
+							"path": [
+								"v1",
+								"buy-products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

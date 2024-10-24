@@ -1,0 +1,60 @@
+services:
+  redis:
+    image: redis/redis-stack-server:latest
+    container_name: redis-stack
+    ports:
+      - "6379:6379"
+    environment:
+      REDIS_ARGS: "--requirepass redis_pass"
+    volumes:
+      - type: bind
+        source: ./redis-data/
+        target: /data
+      - type: bind
+        source: ./local-redis-stack.conf
+        target: /redis-stack.conf
+  
+  mysql:
+    build: 
+      context: ./mysql-db
+      args:
+        - MYSQL_DATABASE=mulesoft_database
+        - MYSQL_USER=mule
+        - MYSQL_PASSWORD=soft
+        - MYSQL_ROOT_PASSWORD=123456789
+    ports:
+      - "3011:3306"
+    container_name: mysql-stack
+    volumes:
+      - type: bind
+        source: ./mysql-db/conf.d
+        target: /etc/mysql/conf.d
+  
+  admin:
+    image: phpmyadmin
+    restart: always
+    environment:
+      - PMA_HOST=mysql-stack
+      - PMA_PORT=3011
+      - PMA_ARBITRARY=1
+    depends_on:
+      - mysql
+    ports:
+      - 9999:80
+  
+  mule-4.8:
+    depends_on:
+      - mysql
+      - redis
+    build: 
+      context: ./mule-runtime
+    container_name: mule-runtime
+    ports:
+      - "2310:2310"
+      - "2311:2311"
+      - "2312:2312"
+      - "2313:2313"
+    volumes:
+      - type: bind
+        source: /mnt/c/Users/andre/Downloads/MuleSoft STC Exercices/applications
+        target: /opt/mule/apps/
